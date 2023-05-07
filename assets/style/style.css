@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color: #8583e9;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+   background-color: var(--color);
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+main {
+    background-color: white;
+    padding: 40px 60px;
+    text-align: center;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    position: relative;
+}
+
+main > p {
+    font-size: 1.2rem;
+    color: var(--color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    width: 330px;
+}
+
+form > div {
+    padding: 11px 15px;
+    border-radius: 5px;
+    border: .1px solid #7e7e7e;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inpDiv:focus-within {
+    border: 1px solid var(--color);
+}
+
+input {
+    width: 90%;
+    border: none;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+input[type = 'submit'] {
+    padding: 13px 15px;
+    border-radius: 5px;
+    border: .1px solid #7e7e7e;
+    margin-block: 5px 20px;
+    border-color: var(--color);
+    background-color: var(--color);
+    color: white;
+    font-size: .9rem;
+    width: 100%;
+}
+
+input[type = 'submit']:focus {
+    transform: scale(0.98);
+}
+
+form p {
+    font-size: 0.84rem;
+    font-weight: 500;
+}
+
+.green {
+    border: 1px solid rgb(99, 255, 99);
+}
+
+/* .greenTxt {
+    color:rgb(99, 255, 99);
+    border: 100px solid grey;
+    display: none;
+} */
+
+.red {
+    border: 1px solid red;
+}
+
+#anchor {
+    width: 100px;
+    margin: 0;
+    padding-block: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+#eyes, #eyes img {
+    position: absolute;
+    width: 20%;
+    z-index: 15;
+}
+
+.glasses {
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+    right: 38.6%;
+    width: 100px;
+    z-index: 30;
+}
+
+.animate {
+    animation-name: glassMove;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes glassMove {
+    0% {
+        top: -100%;
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.7;
+    }
+
+    90% {
+        top: 120px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 105px;
+        opacity: 1;
+    }
+}
+
+.active {
+    top: 80px !important;
+}
+
+.bgImgDiv {
+    position: relative;
+}
+
+.bgImg {
+    position: absolute;
+    top: 10px;
+    left: 27%;
+    width: 54%;
+}
+
+.one {
+    top: -92px;
+    left: 143px;
+}
+
+.two {
+    top: -92px;
+    left: 170px;
+}
+
+@media (max-width: 760px) {
+    main {
+        padding: 20px 30px;
+    }
+
+    .glasses {
+        right: 37%;
+    }
+
+    @keyframes glassMove {
+        0% {
+            top: -100%;
+            opacity: 0;
+        }
+    
+        30% {
+            opacity: 0.7;
+        }
+    
+        90% {
+            top: 110px;
+            opacity: 1;
+        }
+    
+        100% {
+            top: 88px;
+            opacity: 1;
+        }
+    }
+
+    .active {
+        top: 60px !important;
+    }
+}
+
+@media (max-width: 460px) {
+    main {
+        padding: 20px 30px;
+    }
+    
+    form {
+        width: 280px;
+    }
+
+    .glasses {
+        right: 35%;
+    }
+    .one {
+        top: -92px;
+        left: 123px;
+    }
+    
+    .two {
+        top: -92px;
+        left: 155px;
+    }
+
+    .bgImg {
+        position: absolute;
+        top: 17px;
+        left: 27%;
+        width: 54%;
+    }
+
+    @keyframes glassMove {
+        0% {
+            top: -100%;
+            opacity: 0;
+        }
+    
+        30% {
+            opacity: 0.7;
+        }
+    
+        90% {
+            top: 107px;
+            opacity: 1;
+        }
+    
+        100% {
+            top: 87px;
+            opacity: 1;
+        }
+    }
+
+    .active {
+        top: 60px !important;
+    }
+}
